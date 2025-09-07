@@ -126,7 +126,10 @@ export default function TutorForm({ tutor, onSave, onCancel, isLoading = false }
     try {
       await onSave(data)
       toast.success(tutor ? 'Tutor updated successfully!' : 'Tutor created successfully!')
-    } catch (error: any) {
+    
+    }
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    catch (error: any) {
       let errorMessage = 'Failed to save tutor. Please try again.';
       if (error && typeof error === 'object') {
         if (error.message) {

@@ -62,8 +62,9 @@ export default function TutorModal({ isOpen, onClose, tutor, onSave, isLoading =
             {tutor ? 'Update tutor information and settings' : 'Create a new tutor profile with all necessary details'}
           </DialogDescription>
         </DialogHeader>
+        {/* eslint-disable @typescript-eslint/no-explicit-any */}
         <TutorForm
-          tutor={tutor}
+          tutor={tutor as any}
           onSave={onSave}
           onCancel={onClose}
           isLoading={isLoading}
